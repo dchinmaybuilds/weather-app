@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("./assets/pexels-pixabay-235734.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2rem;
+}
+
+.searchBar {
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  padding: 15px;
+  font-size: 1.5rem;
+  height: 80px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 5px 8px 10px black;
+  outline: none;
+  border: none;
+}
+
+.button {
+  font-size: 15px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  height: 80px;
+  width: 80px;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 2px 2px 20px black;
+  cursor: pointer;
+  border: none;
+}
+
+.locationbutton {
+  border-radius: 40px;
+  background: #2d6a4f;
+  color: white;
+  border: none;
+}
+
+.weatherCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  min-width: 350px;
+}
+
+.statsRow {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.msg {
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 1.5rem;
+  font-family: "Times New Roman", Times, serif;
+  letter-spacing: 0.5px;
+}
+
+.locationbutton:hover {
+  background: hsla(153, 40%, 30%, 0.65);
+}
+
+.searchbutton:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
