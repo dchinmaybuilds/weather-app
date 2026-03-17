@@ -6,6 +6,8 @@ const WeatherCard = ({
   wind,
   feelsLike,
   weatherCondition,
+  isLoading,
+  setIsLoading,
 }) => {
   return (
     <div className="weatherCard">
