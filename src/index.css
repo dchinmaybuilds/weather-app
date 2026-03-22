@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +7,7 @@
 }
 
 body {
-  background-image: url("./assets/pexels-pixabay-235734.jpg");
+  background-image: url("./assets/pexels-instawally-176851.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -60,12 +62,12 @@ body {
 
 .locationbutton {
   border-radius: 40px;
-  background: #2d6a4f;
   color: white;
   border: none;
 }
 
 .weatherCard {
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,16 +76,30 @@ body {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   border-radius: 20px;
-  padding: 2rem 3rem;
   border: 1px solid rgba(255, 255, 255, 0.4);
   color: white;
   min-width: 350px;
 }
 
-.statsRow {
-  display: flex;
-  gap: 2rem;
-  margin-top: 1rem;
+.weatherProp {
+  font-weight: 600;
+}
+
+table {
+  width: calc(100% - 40px);
+  margin: 7px 20px 30px;
+  border-collapse: collapse;
+}
+
+td {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(5px);
+}
+
+.weatherCard {
+  font-size: 20px;
 }
 
 .msg {
@@ -91,18 +107,68 @@ body {
   padding: 12px 24px;
   border-radius: 10px;
   font-size: 1.5rem;
-  background: rgba(255, 255, 255, 0.01);
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  margin-top: 1.5rem;
   font-family: "Times New Roman", Times, serif;
   letter-spacing: 0.5px;
 }
 
-.locationbutton:hover {
-  background: hsla(153, 40%, 30%, 0.65);
+.button:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
-.searchbutton:hover {
+.emoji {
+  font-size: 3rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+  font-family: "Cinzel", serif;
+  color: white;
+  font-size: 3rem;
+  text-shadow: 1px 1px whitesmoke;
+}
+
+.searchContainer {
+  position: relative;
+}
+
+.dropDown {
+  position: absolute;
+  width: 100%;
+  background: rgba(0, 0, 20, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  z-index: 10;
+  font-size: x-large;
+}
+
+.dropDown ul {
+  list-style: disc;
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+}
+
+.dropDown li {
+  font-family: "Segoe UI", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+  padding: 10px 16px;
+  color: #ffffff;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dropDown li:hover {
   background: rgba(255, 255, 255, 0.1);
+}
+
+.dropDown li:last-child {
+  border-bottom: none;
+}
+
+.flag {
+  height: 18px;
+  width: 27px;
 }
