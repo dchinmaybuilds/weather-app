@@ -13,6 +13,7 @@ function App() {
   const [suggestions, setSuggestions] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [fetchError, setFetchError] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(-1);
   const debouncedValue = useDebounce(search, 100);
   const skipFetch = useRef(false);
 
@@ -35,6 +36,36 @@ function App() {
 
     fetchSuggestions();
   }, [debouncedValue]);
+
+  const handleKeyDown = (e) => {
+    setActiveIndex(-1);
+    switch (e.key) {
+      case "ArrowDown":
+        setActiveIndex((activeIndex + 1) % suggestions.length);
+        break;
+
+      case "ArrowUp":
+        if (activeIndex <= 0) {
+          setActiveIndex(suggestions.length - 1);
+          break;
+        } else {
+          setActiveIndex(activeIndex - 1);
+          break;
+        }
+
+      case "Enter":
+        if (activeIndex >= 0) {
+          handleSuggestionClick(suggestions[activeIndex]);
+          setActiveIndex(-1);
+        }
+        break;
+
+      case "Escape":
+        setSuggestions([]);
+        setActiveIndex(-1);
+        break;
+    }
+  };
 
   // function to handle click for a suggestion
   const handleSuggestionClick = (suggestion) => {
@@ -138,10 +169,12 @@ function App() {
       <SearchBar
         search={search}
         setSearch={setSearch}
+        activeIndex={activeIndex}
         suggestions={suggestions}
         handleSearch={handleSearch}
         handleLocation={handleLocation}
         handleSuggestionClick={handleSuggestionClick}
+        handleKeyDown={handleKeyDown}
       />
       {isLoading ? (
         <p className="msg">Loading weather data...</p>

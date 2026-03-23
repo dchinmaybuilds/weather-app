@@ -1,35 +1,47 @@
 const SearchBar = ({
   search,
   setSearch,
+  activeIndex,
   suggestions,
   handleSearch,
   handleLocation,
   handleSuggestionClick,
+  handleKeyDown,
 }) => {
   return (
     <div className="searchContainer">
       <form className="inputForm" onSubmit={(e) => e.preventDefault()}>
-        <input
-          type="text"
-          className="searchBar"
-          placeholder="Enter city"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <button className="button searchbutton" onClick={handleSearch}>
-          Search
-        </button>
-        <button className="button locationbutton" onClick={handleLocation}>
-          Use my location
-        </button>
+        <div className="inputWrapper">
+          <input
+            type="text"
+            className="searchBar"
+            placeholder="Enter city"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            onKeyDown={handleKeyDown}
+          />
+          {search && (
+            <button className="clearbutton" onClick={() => setSearch("")}>
+              x
+            </button>
+          )}
+        </div>
+        <div className="buttonWrapper">
+          <button className="button searchbutton" onClick={handleSearch}>
+            Search
+          </button>
+          <button className="button locationbutton" onClick={handleLocation}>
+            Use my location
+          </button>
+        </div>
       </form>
 
       {suggestions.length > 0 && (
         <div className="dropDown">
           <ul className="suggestionsList">
-            {suggestions.map((suggestion) => (
+            {suggestions.map((suggestion, index) => (
               <li
-                className="suggestion"
+                className={index === activeIndex ? "Active" : ""}
                 key={suggestion.id}
                 onClick={() => handleSuggestionClick(suggestion)}
               >

@@ -15,9 +15,6 @@ const WeatherCard = ({
       <h2 className="emoji">{weatherEmoji}</h2>
       <h1>{`${temp}°C`}</h1>
       <p>{weatherCondition}</p>
-      {/* <div className="weatherProp">{`Humidity - ${humidity}%`}</div>
-        <div className="weatherProp">{`Wind - ${wind}km/h`}</div>
-        <div className="weatherProp">{`Feels like - ${feelsLike}°C`}</div> */}
       <table>
         <tbody>
           <tr>
